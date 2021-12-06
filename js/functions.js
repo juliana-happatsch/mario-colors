@@ -20,6 +20,17 @@ const mistakeAudio = new Audio('sounds/errou.mp3');
 const recorderBtn = document.getElementById('answer-btn');
 let audioTranscript = '';
 
+function startGame() {
+  const main = document.getElementById('body');
+  const newImageArea = document.createElement('section');
+
+  main.appendChild(newImageArea);
+  newImageArea.id = 'mario';
+  newImageArea.innerHTML = "<img src='./images/mario.png' alt='mario'>";
+
+  addColorToBox(drawColor());
+}
+
 function changeImage() {
   const windowWidth = window.innerWidth;
   const main = document.getElementById('body');
@@ -106,5 +117,4 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
 }
 
 window.addEventListener('resize', changeImage);
-window.onload(changeImage());
-window.onload(addColorToBox(drawColor()));
+window.onload(startGame());
