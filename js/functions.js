@@ -43,3 +43,5 @@ function updateScore(value) {
 
   score.innerText = engine.coins;
 }
+
+addColorToBox(drawColor());
