@@ -13,3 +13,13 @@ const engine = {
   },
   coins: 0,
 };
+
+function drawColor() {
+  const colorsLength = engine.colors.length;
+  const colorIndex = Math.floor(Math.random() * colorsLength);
+  const colorNameArea = document.getElementById('color-name');
+  
+  colorNameArea.innerText = engine.colors[colorIndex];
+
+  return engine.hex[engine.colors[colorIndex]];
+}
