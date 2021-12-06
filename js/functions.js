@@ -90,6 +90,4 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
   alert('There is no support for speech recognition. I\'m sorry :(');
 }
 
-
-
 addColorToBox(drawColor());
