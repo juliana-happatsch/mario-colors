@@ -23,13 +23,13 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   background-color: #dddddd;
-  height: 50px;
-  padding: 20px;
+  width: 100%;
+  padding: 1em;
 }
 
 #score {
   background-color: #61b1ea;
-  padding: 10px 50px;
+  padding: .5em 1em;
   color: white;
   border-radius: 30px;
   font-weight: bold;
@@ -44,21 +44,28 @@ a:visited {
 }
 
 #title {
-  font-size: 25px;
+  font-size: 6vw;
+  text-align: right;
+  width: 100%;
 }
 
 main {
   display: flex;
-  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6vw;
+  height: 100vh;
+  margin-bottom: 10vw;
 }
 
 #game-area {
   color: white;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   align-items: center;
   justify-content: center;
+  margin-bottom: 4vw;
 }
 
 #current-color {
@@ -92,7 +99,7 @@ main {
 }
 
 #mario img {
-  width: 350px;
+  width: 50vw;
 }
 
 footer {
