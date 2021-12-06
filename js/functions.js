@@ -14,6 +14,9 @@ const engine = {
   coins: 0,
 };
 
+const coinAudio = new Audio('sounds/moeda.mp3');
+const mistakeAudio = new Audio('sounds/errou.mp3');
+
 function drawColor() {
   const colorsLength = engine.colors.length;
   const colorIndex = Math.floor(Math.random() * colorsLength);
