@@ -23,3 +23,9 @@ function drawColor() {
 
   return engine.hex[engine.colors[colorIndex]];
 }
+
+function addColorToBox(color) {
+  const colorBox = document.getElementById('current-color');
+
+  colorBox.style.backgroundColor = color;
+}
