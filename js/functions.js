@@ -32,3 +32,14 @@ function addColorToBox(color) {
 
   colorBox.style.backgroundColor = color;
 }
+
+function updateScore(value) {
+  let score = document.getElementById('current-score');
+
+  engine.coins += value;
+
+  if (value > 0) coinAudio.play();
+  if (value < 0) mistakeAudio.play();
+
+  score.innerText = engine.coins;
+}
