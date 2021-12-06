@@ -75,7 +75,7 @@ main {
   text-decoration: underline;
 }
 
-#game-area button {
+#answer-btn {
   background-color: transparent;
   outline: none;
   color: white;

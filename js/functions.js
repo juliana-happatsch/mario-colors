@@ -1,5 +1,5 @@
 const engine = {
-  colors: ['green', 'purple', 'pink', 'yellow', 'red', 'blue', 'white', 'black', 'grey'],
+  colors: ['green', 'purple', 'pink', 'yellow', 'red', 'blue', 'white', 'black', 'gray'],
   hex: {
     green: '#008000',
     purple: '#800080',
@@ -9,13 +9,16 @@ const engine = {
     blue: '#0000FF',
     white: '#FFFFFF',
     black: '#000000',
-    grey: '#808080',
+    gray: '#808080',
   },
   coins: 0,
 };
 
 const coinAudio = new Audio('sounds/moeda.mp3');
 const mistakeAudio = new Audio('sounds/errou.mp3');
+
+const recorderBtn = document.getElementById('answer-btn');
+let audioTranscript = '';
 
 function drawColor() {
   const colorsLength = engine.colors.length;
@@ -43,5 +46,50 @@ function updateScore(value) {
 
   score.innerText = engine.coins;
 }
+
+if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+  const SpeechAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const recorder = new SpeechAPI();
+
+  recorder.continuos = false;
+  recorder.lang = 'en-US';
+
+  recorder.onstart = function() {
+    recorderBtn.innerText = 'I\'m listening';
+    recorderBtn.style.backgroundColor = 'white';
+    recorderBtn.style.color = 'black';
+  }
+
+  recorder.onend = function() {
+    recorderBtn.innerText = 'ANSWER';
+    recorderBtn.style.backgroundColor = 'transparent';
+    recorderBtn.style.color = 'white';
+  }
+
+  recorder.onresult = function(e) {
+    const colorName = document.getElementById('color-name').innerText.toLowerCase();
+    audioTranscript = e.results[0][0].transcript;
+
+    console.log(colorName);
+    console.log(audioTranscript);
+
+    if (colorName === audioTranscript.toLowerCase()) {
+      updateScore(1);
+    } else {
+      updateScore(-1);
+    }
+
+    addColorToBox(drawColor());
+  }
+
+  recorderBtn.addEventListener('click', function(e) {
+    recorder.start();
+  });
+} else {
+  alert('There is no support for speech recognition. I\'m sorry :(');
+}
+
+
 
 addColorToBox(drawColor());
