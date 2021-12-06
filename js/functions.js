@@ -71,9 +71,6 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
     const colorName = document.getElementById('color-name').innerText.toLowerCase();
     audioTranscript = e.results[0][0].transcript;
 
-    console.log(colorName);
-    console.log(audioTranscript);
-
     if (colorName === audioTranscript.toLowerCase()) {
       updateScore(1);
     } else {
