@@ -49,13 +49,11 @@ a:visited {
   width: 100%;
 }
 
-main {
+#body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 6vw;
-  height: 100vh;
-  margin-bottom: 10vw;
+  height: 70vh;
 }
 
 #game-area {
@@ -65,7 +63,6 @@ main {
   width: 70%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4vw;
 }
 
 #current-color {
@@ -90,16 +87,8 @@ main {
   padding: 15px 80px;
   border-radius: 7px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 15px;
-}
-
-#mario {
-  width: 40%;
-}
-
-#mario img {
-  width: 50vw;
 }
 
 footer {
@@ -123,4 +112,22 @@ footer img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  #title {
+    font-size: 2.2vw;
+  }
+
+  #answer-btn {
+    font-size: 20px;
+  }
+
+  #mario {
+    width: 40%;
+  }
+  
+  #mario img {
+    width: 25vw;
+  }
 }

@@ -22,12 +22,19 @@ let audioTranscript = '';
 
 function changeImage() {
   const windowWidth = window.innerWidth;
+  const main = document.getElementById('body');
   const imageArea = document.getElementById('mario');
   
   if (windowWidth >= '768') {
-    imageArea.innerHTML = "<img src='./images/mario.png' alt='mario'>";
+    if (!imageArea) {
+      const newImageArea = document.createElement('section');
+
+      main.appendChild(newImageArea);
+      newImageArea.id = 'mario';
+      newImageArea.innerHTML = "<img src='./images/mario.png' alt='mario'>";
+    }
   } else {
-    imageArea.innerHTML = '';
+    main.removeChild(imageArea);
   }
 }
 
