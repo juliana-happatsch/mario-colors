@@ -106,4 +106,5 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
 }
 
 window.addEventListener('resize', changeImage);
+window.onload(changeImage());
 window.onload(addColorToBox(drawColor()));
