@@ -22,6 +22,7 @@ let audioTranscript = '';
 
 function startGame() {
   const windowWidth = window.innerWidth;
+  console.log(windowWidth);
   if (windowWidth >= '768') {
     const main = document.getElementById('body');
     const newImageArea = document.createElement('section');
@@ -120,4 +121,4 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
 }
 
 window.addEventListener('resize', changeImage);
-window.onload(startGame());
+window.onload = startGame;
