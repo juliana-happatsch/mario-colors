@@ -21,12 +21,15 @@ const recorderBtn = document.getElementById('answer-btn');
 let audioTranscript = '';
 
 function startGame() {
-  const main = document.getElementById('body');
-  const newImageArea = document.createElement('section');
+  const windowWidth = window.innerWidth;
+  if (windowWidth >= '768') {
+    const main = document.getElementById('body');
+    const newImageArea = document.createElement('section');
 
-  main.appendChild(newImageArea);
-  newImageArea.id = 'mario';
-  newImageArea.innerHTML = "<img src='./images/mario.png' alt='mario'>";
+    main.appendChild(newImageArea);
+    newImageArea.id = 'mario';
+    newImageArea.innerHTML = "<img src='./images/mario.png' alt='mario'>";
+  }
 
   addColorToBox(drawColor());
 }
